@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="433b2aed-da12-44a6-856c-10caa93a5961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myxblock/myxblock.py" afterPath="$PROJECT_DIR$/myxblock/myxblock.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myxblock/static/html/myxblock.html" afterPath="$PROJECT_DIR$/myxblock/static/html/myxblock.html" />
     </list>
@@ -28,11 +27,21 @@
       <file leaf-file-name="myxblock.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myxblock/myxblock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+            <state relative-caret-position="468">
+              <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
               <folding>
                 <element signature="e#59#79#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myxblock_author.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock_author.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,8 +59,8 @@
       <file leaf-file-name="myxblock.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+            <state relative-caret-position="216">
+              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -87,6 +96,7 @@
         <option value="$PROJECT_DIR$/myxblock/static/js/src/myxblock.js" />
         <option value="$PROJECT_DIR$/myxblock/static/html/myxblock_edit.html" />
         <option value="$PROJECT_DIR$/myxblock/static/html/myxblock.html" />
+        <option value="$PROJECT_DIR$/myxblock/static/html/myxblock_author.html" />
         <option value="$PROJECT_DIR$/myxblock/myxblock.py" />
       </list>
     </option>
@@ -633,14 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myxblock/static/js/src/myxblock.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -653,16 +655,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        <state relative-caret-position="216">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock_author.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myxblock/myxblock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+        <state relative-caret-position="468">
+          <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
           <folding>
             <element signature="e#59#79#0" expanded="true" />
           </folding>
