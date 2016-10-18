@@ -47,6 +47,15 @@ class MyXBlock(XBlock):
         frag.initialize_js('MyXBlock')
         return frag
 
+    def studio_view(self,context=None):
+        html = self.resource_string("static/html/myxblock_edit.html")
+        frag = Fragment(html.format(self=self))
+
+        frag.add_css(self.resource_string("static/css/myxblock.css"))
+        frag.add_javascript(self.resource_string("static/js/src/myxblock.js"))
+        frag.initialize_js('MyXBlock')
+        return frag
+
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.
     @XBlock.json_handler
