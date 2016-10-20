@@ -10,11 +10,10 @@ from xblock.fragment import Fragment
 
 class MyXBlock(XBlock):
 
-    display_name = String(
-        display_name="Display Name",
-        default="XBlock Name",
-        scopde=Scope.settings
-    )
+
+
+    display_name = String(default='Streaming Video', scope=Scope.settings)
+
     """
     TO-DO: document what your XBlock does.
     """
@@ -48,11 +47,13 @@ class MyXBlock(XBlock):
 
         context = {
             'title': self.display_name,
-        }                       
+        }
+
+        self.display_name = context
 
         html = self.resource_string("static/html/myxblock.html")
         frag = Fragment(html.format(self=self))
-        frag.add_content(self,context)
+
         frag.add_css(self.resource_string("static/css/myxblock.css"))
         frag.add_javascript(self.resource_string("static/js/src/myxblock.js"))
         frag.initialize_js('MyXBlock')
@@ -67,19 +68,19 @@ class MyXBlock(XBlock):
         frag.initialize_js('MyXBlock')
         return frag
 
-    def author_view(self,context=None):
+    #def author_view(self,context=None):
 
-        context = {
-            'title': self.display_name,
-        }
+        #    context = {
+        #    'title': self.display_name,
+        #}
 
-        html = self.resource_string("static/html/myxblock_author.html")
-        frag = Fragment(html.format(self=self))
-        frag.add_content(self,context)
-        frag.add_css(self.resource_string("static/css/myxblock.css"))
-        frag.add_javascript(self.resource_string("static/js/src/myxblock.js"))
-        frag.initialize_js('MyXBlock')
-        return frag
+        #html = self.resource_string("static/html/myxblock_author.html")
+        #frag = Fragment(html.format(self=self))
+        #frag.add_content(self,context)
+        #frag.add_css(self.resource_string("static/css/myxblock.css"))
+        #frag.add_javascript(self.resource_string("static/js/src/myxblock.js"))
+        #frag.initialize_js('MyXBlock')
+        #return frag
 
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.
@@ -92,6 +93,7 @@ class MyXBlock(XBlock):
         assert data['hello'] == 'world'
 
         self.count += 1
+
         return {"count": self.count}
 
     # TO-DO: change this to create the scenarios you'd like to see in the

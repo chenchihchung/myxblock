@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="433b2aed-da12-44a6-856c-10caa93a5961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myxblock/myxblock.py" afterPath="$PROJECT_DIR$/myxblock/myxblock.py" />
     </list>
     <ignored path="myxblock.iws" />
@@ -27,8 +26,8 @@
       <file leaf-file-name="myxblock.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myxblock/myxblock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+            <state relative-caret-position="18">
+              <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
               <folding>
                 <element signature="e#59#79#0" expanded="true" />
               </folding>
@@ -792,8 +791,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myxblock/myxblock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+        <state relative-caret-position="18">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
           <folding>
             <element signature="e#59#79#0" expanded="true" />
           </folding>
