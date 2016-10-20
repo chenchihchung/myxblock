@@ -8,6 +8,7 @@ from xblock.fields import Scope, Integer,String
 from xblock.fragment import Fragment
 
 
+
 class MyXBlock(XBlock):
 
 
@@ -49,10 +50,10 @@ class MyXBlock(XBlock):
             'title': self.display_name,
         }
 
-        self.display_name = context
 
         html = self.resource_string("static/html/myxblock.html")
         frag = Fragment(html.format(self=self))
+
 
         frag.add_css(self.resource_string("static/css/myxblock.css"))
         frag.add_javascript(self.resource_string("static/js/src/myxblock.js"))
