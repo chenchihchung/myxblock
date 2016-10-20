@@ -30,6 +30,7 @@ function MyXBlock(runtime, element) {
     $(function ($) {
         /* Here's where you'd do things on page load. */
         alert('This is myxblock.js')
-        $(".xblock-display-name").text = "Xblock title ";
+        $(".xblock-display-name").html("xblock title");
+        
     });
 }
