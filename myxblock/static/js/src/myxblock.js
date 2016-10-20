@@ -34,10 +34,10 @@ function MyXBlock(runtime, element) {
 
     function init() {
         alert(" init() ");
-        var handlerUrl = runtime.handlerUrl(element, 'init_xblock');
+        var handlerUrl1 = runtime.handlerUrl(element, 'init_xblock');
         $.ajax({
             type: "POST",
-            url: handlerUrl,
+            url: handlerUrl1,
             data: JSON.stringify({"hello": "world"}),
             success: getInit
         });
