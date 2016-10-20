@@ -29,15 +29,15 @@ function MyXBlock(runtime, element) {
 
     function getInit(result) {
          alert(" getInit()");
-         alert('result title ='+result.title);
+         alert('result title ='+result.countvalue);
     }
 
     function init() {
         alert(" init() ");
-        var handlerUrl111 = runtime.handlerUrl(element, 'test');
+        var url = runtime.handlerUrl(element, 'test_count');
         $.ajax({
             type: "POST",
-            url: handlerUrl111,
+            url: url,
             data: JSON.stringify({"hello": "world"}),
             success: getInit
         });
