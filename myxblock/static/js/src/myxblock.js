@@ -35,7 +35,7 @@ function MyXBlock(runtime, element) {
     });
 
     function init() {
-        alert(" init() ");
+        alert(" init*********() ");
         var url = runtime.handlerUrl(element, 'test_count');
         $.ajax({
             type: "POST",
