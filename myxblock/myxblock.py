@@ -46,6 +46,7 @@ class MyXBlock(XBlock):
         when viewing courses.
         """
 
+
         context = {
             'title': self.display_name,
         }
@@ -83,10 +84,15 @@ class MyXBlock(XBlock):
         #frag.initialize_js('MyXBlock')
         #return frag
 
+    @XBlock.json_handler
+    def __init__(self,data,suffix=''):
+        return {"title123":"xblock title","name":"xblock name","abc":"123"}
+
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.
     @XBlock.json_handler
     def increment_count(self, data, suffix=''):
+
         """
         An example handler, which increments the data.
         """
