@@ -28,11 +28,13 @@ function MyXBlock(runtime, element) {
     */
 
     function getInit(result) {
+         alert(" getInit()");
          alert('result title ='+result.title);
     }
 
     function init() {
-        var handlerUrl = runtime.handlerUrl(element, '__init__');
+        alert(" init() ");
+        var handlerUrl = runtime.handlerUrl(element, 'init_xblock');
         $.ajax({
             type: "POST",
             url: handlerUrl,
