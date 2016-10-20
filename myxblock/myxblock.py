@@ -46,15 +46,8 @@ class MyXBlock(XBlock):
         when viewing courses.
         """
 
-
-        context = {
-            'title': self.display_name,
-        }
-
-
         html = self.resource_string("static/html/myxblock.html")
         frag = Fragment(html.format(self=self))
-
 
         frag.add_css(self.resource_string("static/css/myxblock.css"))
         frag.add_javascript(self.resource_string("static/js/src/myxblock.js"))
@@ -83,15 +76,6 @@ class MyXBlock(XBlock):
         #frag.add_javascript(self.resource_string("static/js/src/myxblock.js"))
         #frag.initialize_js('MyXBlock')
         #return frag
-
-    @XBlock.json_handler
-    def init_xblock(self, data, suffix=''):
-
-        return {"title123":"xblock title","name":"xblock name","abc":"123"}
-
-    @XBlock.json_handler
-    def test(self,data , suffix=''):
-        return {"abc":"123"}
 
     @XBlock.json_handler
     def test_count(self, data, suffix=''):

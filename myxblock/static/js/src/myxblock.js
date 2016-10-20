@@ -7,14 +7,7 @@ function MyXBlock(runtime, element) {
 
     var handlerUrl = runtime.handlerUrl(element, 'increment_count');
 
-    $("#myDiv").click(function(eventObject) {
-        $.ajax({
-            type: "POST",
-            url: handlerUrl,
-            data: JSON.stringify({"hello": "world"}),
-            success: updateCount
-        });
-    });
+
 
     /*
     $('p', element).click(function(eventObject) {
@@ -29,12 +22,21 @@ function MyXBlock(runtime, element) {
 
     function getInit(result) {
          alert(" getInit()");
-         alert('result title ='+result.count);
+         alert('result title ='+result.countvalue);
     }
+
+     $("#myDiv").click(function(eventObject) {
+        $.ajax({
+            type: "POST",
+            url: handlerUrl,
+            data: JSON.stringify({"hello": "world"}),
+            success: updateCount
+        });
+    });
 
     function init() {
         alert(" init() ");
-        var url = runtime.handlerUrl(element, 'increment_count');
+        var url = runtime.handlerUrl(element, 'test_count');
         $.ajax({
             type: "POST",
             url: url,
