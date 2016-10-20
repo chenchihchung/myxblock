@@ -45,8 +45,14 @@ class MyXBlock(XBlock):
         The primary view of the MyXBlock, shown to students
         when viewing courses.
         """
+
+        context = {
+            'title': self.display_name,
+        }                       
+
         html = self.resource_string("static/html/myxblock.html")
         frag = Fragment(html.format(self=self))
+        frag.add_content(self,context)
         frag.add_css(self.resource_string("static/css/myxblock.css"))
         frag.add_javascript(self.resource_string("static/js/src/myxblock.js"))
         frag.initialize_js('MyXBlock')
@@ -62,9 +68,14 @@ class MyXBlock(XBlock):
         return frag
 
     def author_view(self,context=None):
+
+        context = {
+            'title': self.display_name,
+        }
+
         html = self.resource_string("static/html/myxblock_author.html")
         frag = Fragment(html.format(self=self))
-
+        frag.add_content(self,context)
         frag.add_css(self.resource_string("static/css/myxblock.css"))
         frag.add_javascript(self.resource_string("static/js/src/myxblock.js"))
         frag.initialize_js('MyXBlock')
