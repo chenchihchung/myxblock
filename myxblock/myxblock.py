@@ -10,6 +10,11 @@ from xblock.fragment import Fragment
 
 class MyXBlock(XBlock):
 
+    display_name = String(
+        display_name="Display Name",
+        default="XBlock Name",
+        scopde=Scope.settings
+    )
     """
     TO-DO: document what your XBlock does.
     """
