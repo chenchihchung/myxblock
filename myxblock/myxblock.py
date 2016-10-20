@@ -85,8 +85,15 @@ class MyXBlock(XBlock):
         #return frag
 
     @XBlock.json_handler
-    def init_xblock(self,data,suffix=''):
+    def init_xblock(self, data, suffix=''):
+
         return {"title123":"xblock title","name":"xblock name","abc":"123"}
+
+    @XBlock.json_handler
+    def test(self,data , suffix=''):
+        return {"abc":"123"}
+
+
 
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.

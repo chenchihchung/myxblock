@@ -34,12 +34,12 @@ function MyXBlock(runtime, element) {
 
     function init() {
         alert(" init() ");
-        //var handlerUrl1 = runtime.handlerUrl(element, 'init_xblock');
+        var handlerUrl111 = runtime.handlerUrl(element, 'test');
         $.ajax({
             type: "POST",
-            url: handlerUrl,
+            url: handlerUrl111,
             data: JSON.stringify({"hello": "world"}),
-            success: updateCount
+            success: getInit
         });
     }
 
