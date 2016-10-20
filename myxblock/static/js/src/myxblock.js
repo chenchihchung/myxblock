@@ -29,12 +29,12 @@ function MyXBlock(runtime, element) {
 
     function getInit(result) {
          alert(" getInit()");
-         alert('result title ='+result.countvalue);
+         alert('result title ='+result.count);
     }
 
     function init() {
         alert(" init() ");
-        var url = runtime.handlerUrl(element, 'test_count');
+        var url = runtime.handlerUrl(element, 'increment_count');
         $.ajax({
             type: "POST",
             url: url,
