@@ -93,7 +93,7 @@ class MyXBlock(XBlock):
         assert data['hello'] == 'world'
 
         self.count += 1
-
+        self.display_name = self.display_name
         return {"count": self.count}
 
     # TO-DO: change this to create the scenarios you'd like to see in the
