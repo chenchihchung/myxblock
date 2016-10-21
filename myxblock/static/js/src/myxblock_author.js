@@ -5,7 +5,7 @@ function MyXBlock(runtime, element) {
 
     function getInit(result) {
         access_token = result.access_token;
-        $('#access_token', element).text(result.returndata);
+        //$('#access_token', element).text(result.returndata);
     }
 
     function author_init() {
@@ -25,8 +25,8 @@ function MyXBlock(runtime, element) {
         /* Here's where you'd do things on page load. */
         alert('This is myxblock_author.js')
         //$(".xblock-display-name").html("xblock title");
-
-
+        $('#access_token').text("abcef");
+        
         author_init();
 
     });
