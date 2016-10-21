@@ -34,8 +34,8 @@
       <file leaf-file-name="myxblock.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myxblock/myxblock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-464">
-              <caret line="83" column="27" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="27" />
+            <state relative-caret-position="-320">
+              <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
               <folding>
                 <element signature="e#57#68#0" expanded="true" />
               </folding>
@@ -43,17 +43,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myxblock_author.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="myxblock_author.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myxblock/static/js/src/myxblock_author.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+            <state relative-caret-position="126">
+              <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myxblock_author.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="myxblock_author.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock_author.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
@@ -849,10 +849,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock_author.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/myxblock/myxblock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-464">
-          <caret line="83" column="27" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="27" />
+        <state relative-caret-position="-320">
+          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
           <folding>
             <element signature="e#57#68#0" expanded="true" />
           </folding>
@@ -861,16 +869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myxblock/static/js/src/myxblock_author.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock_author.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        <state relative-caret-position="126">
+          <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
           <folding />
         </state>
       </provider>
