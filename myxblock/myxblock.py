@@ -66,7 +66,7 @@ class MyXBlock(XBlock):
 
         html = self.resource_string("static/html/myxblock_author.html")
         frag = Fragment(html.format(self=self))
-        frag.add_content(self,context)
+
         frag.add_css(self.resource_string("static/css/myxblock.css"))
         frag.add_javascript(self.resource_string("static/js/src/myxblock_author.js"))
         frag.initialize_js('MyXBlock')
@@ -93,7 +93,7 @@ class MyXBlock(XBlock):
         assert data['hello'] == 'world'
 
         self.count += 1
-        self.display_name = self.display_name
+
         return {"count": self.count}
 
     # TO-DO: change this to create the scenarios you'd like to see in the
