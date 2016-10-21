@@ -2,13 +2,14 @@
 function MyXBlock(runtime, element) {
 
 
-
     function getInit(result) {
         access_token = result.returndata;
         console.log('access_log -->'+access_token);
         $('#access_token').text(result.returndata);
         //$('#access_token', element).text(result.returndata);
     }
+
+
 
     function author_init() {
         var url = runtime.handlerUrl(element, 'get_init');
