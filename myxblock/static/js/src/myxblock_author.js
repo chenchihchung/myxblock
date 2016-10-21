@@ -4,13 +4,12 @@ function MyXBlock(runtime, element) {
 
 
     function getInit(result) {
-         alert(" getInit()");
-         alert('result title ='+result.listfiles);
+
     }
 
-    function init() {
-        alert(" init*********() ");
-        var url = runtime.handlerUrl(element, 'list_files');
+    function author_init() {
+        alert(" author_init() ");
+        var url = runtime.handlerUrl(element, 'get_init');
         $.ajax({
             type: "POST",
             url: url,
@@ -25,7 +24,7 @@ function MyXBlock(runtime, element) {
         /* Here's where you'd do things on page load. */
         alert('This is myxblock_author.js')
         //$(".xblock-display-name").html("xblock title");
-        init();
+        author_init();
 
     });
 }

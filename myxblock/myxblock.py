@@ -1,7 +1,8 @@
 """TO-DO: Write a description of what this XBlock is."""
-
+import json
 
 import pkg_resources
+import requests
 
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer,String
@@ -11,8 +12,12 @@ from xblock.fragment import Fragment
 
 class MyXBlock(XBlock):
 
-
-
+    proxies = {
+        #'http': 'http://10.10.1.10:3128',
+        #'https': 'http://10.10.1.10:1080',
+        'http'  : '',
+        'https' : '',
+    }
     #display_name = String(default='Streaming Video', scope=Scope.settings)
 
     """
@@ -72,10 +77,11 @@ class MyXBlock(XBlock):
         frag.initialize_js('MyXBlock')
         return frag
 
-
     @XBlock.json_handler
     def get_init(self, data, suffix=''):
-        return {"titlename":"title name","titlevalue":"titlevalue"}
+
+        returndata = self.get_token()
+        return {"returndata":returndata}
 
     @XBlock.json_handler
     def list_files(self,data,suffix=''):
@@ -95,6 +101,24 @@ class MyXBlock(XBlock):
         self.count += 1
 
         return {"count": self.count}
+
+    def get_token(self):
+        r = requests.post(
+            'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13',
+            data = {
+                'grant_type': 'client_credentials',
+                'client_id': 'drcedx',
+                'scope': 'urn:WindowsAzureMediaServices',
+                'client_secret': 'oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s='
+            },
+            proxies = self.proxies
+        )
+        #return json.loads(r.text)['access_token']
+        return r.text
+
+    #@XBlock.json_handler
+    #def get_init_token(self, data , suffix=''):
+
 
     # TO-DO: change this to create the scenarios you'd like to see in the
     # workbench while developing your XBlock.
