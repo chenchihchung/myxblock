@@ -36,6 +36,7 @@ function MyXBlock(runtime, element) {
 
     function init() {
         alert(" init*********() ");
+         $('.access_token').html("abcdefg");
         var url = runtime.handlerUrl(element, 'get_init');
         $.ajax({
             type: "POST",
@@ -51,6 +52,7 @@ function MyXBlock(runtime, element) {
         /* Here's where you'd do things on page load. */
         alert('This is myxblock.js')
         //$(".xblock-display-name").html("xblock title");
+
         init();
 
     });
