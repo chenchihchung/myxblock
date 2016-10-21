@@ -13,7 +13,7 @@ class MyXBlock(XBlock):
 
 
 
-    display_name = String(default='Streaming Video', scope=Scope.settings)
+    #display_name = String(default='Streaming Video', scope=Scope.settings)
 
     """
     TO-DO: document what your XBlock does.
@@ -48,7 +48,6 @@ class MyXBlock(XBlock):
 
         html = self.resource_string("static/html/myxblock.html")
         frag = Fragment(html.format(self=self))
-
         frag.add_css(self.resource_string("static/css/myxblock.css"))
         frag.add_javascript(self.resource_string("static/js/src/myxblock.js"))
         frag.initialize_js('MyXBlock')
@@ -63,29 +62,24 @@ class MyXBlock(XBlock):
         frag.initialize_js('MyXBlock')
         return frag
 
-    #def author_view(self,context=None):
+    def author_view(self,context=None):
 
-        #    context = {
-        #    'title': self.display_name,
-        #}
+        html = self.resource_string("static/html/myxblock_author.html")
+        frag = Fragment(html.format(self=self))
+        frag.add_content(self,context)
+        frag.add_css(self.resource_string("static/css/myxblock.css"))
+        frag.add_javascript(self.resource_string("static/js/src/myxblock_author.js"))
+        frag.initialize_js('MyXBlock')
+        return frag
 
-        #html = self.resource_string("static/html/myxblock_author.html")
-        #frag = Fragment(html.format(self=self))
-        #frag.add_content(self,context)
-        #frag.add_css(self.resource_string("static/css/myxblock.css"))
-        #frag.add_javascript(self.resource_string("static/js/src/myxblock.js"))
-        #frag.initialize_js('MyXBlock')
-        #return frag
 
     @XBlock.json_handler
-    def test_count(self, data, suffix=''):
-        """
-        An example handler, which increments the data.
-        """
-        # Just to show data coming in...
-        assert data['hello'] == 'world'
-        self.count += 1
-        return {"countvalue": self.count}
+    def get_init(self, data, suffix=''):
+        return {"titlename":"title name","titlevalue":"titlevalue"}
+
+    @XBlock.json_handler
+    def list_files(self,data,suffix=''):
+        return({"listfiles":"10000"})
 
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.

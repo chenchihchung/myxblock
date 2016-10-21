@@ -22,7 +22,7 @@ function MyXBlock(runtime, element) {
 
     function getInit(result) {
          alert(" getInit()");
-         alert('result title ='+result.countvalue);
+         alert('result title ='+result.titlename+",value ="+result.titlevalue);
     }
 
      $("#myDiv").click(function(eventObject) {
@@ -36,7 +36,7 @@ function MyXBlock(runtime, element) {
 
     function init() {
         alert(" init*********() ");
-        var url = runtime.handlerUrl(element, 'test_count');
+        var url = runtime.handlerUrl(element, 'get_init');
         $.ajax({
             type: "POST",
             url: url,
