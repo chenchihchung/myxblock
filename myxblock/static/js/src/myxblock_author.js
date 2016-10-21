@@ -4,7 +4,8 @@ function MyXBlock(runtime, element) {
 
 
     function getInit(result) {
-
+        access_token = result.access_token;
+        $('access_token', element).text(access_token);
     }
 
     function author_init() {

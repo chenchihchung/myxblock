@@ -114,7 +114,8 @@ class MyXBlock(XBlock):
             proxies = self.proxies
         )
         #return json.loads(r.text)['access_token']
-        return r.text
+        jsonObject = json.loads(r.text)
+        return jsonObject['access_token']
 
     #@XBlock.json_handler
     #def get_init_token(self, data , suffix=''):
