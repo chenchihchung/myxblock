@@ -6,6 +6,7 @@ function MyXBlock(runtime, element) {
     function listFiles(result) {
         access_token = result.returndata;
         console.log('access_log -->'+access_token);
+        get_root_uri(access_token);
         //$('#access_token').text(result.returndata);
         //$('#access_token', element).text(result.returndata);
 
