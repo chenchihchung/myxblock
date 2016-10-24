@@ -20,6 +20,9 @@ function MyXBlock(runtime, element) {
     });
     */
 
+
+
+
     function getInit(result) {
          alert(" getInit()");
          alert('result title ='+result.titlename+",value ="+result.titlevalue);
@@ -42,7 +45,8 @@ function MyXBlock(runtime, element) {
             type: "POST",
             url: url,
             data: JSON.stringify({"hello": "world"}),
-            success: getInit
+            success: getInit,
+
         });
     }
 
@@ -52,8 +56,8 @@ function MyXBlock(runtime, element) {
         /* Here's where you'd do things on page load. */
         alert('This is myxblock.js')
         //$(".xblock-display-name").html("xblock title");
-        $("#access_token").html(" access_token");
-        $(".access_token_text").text(" access_token");
+        $("#access_token").html("access_token");
+        $(".access_token_text").text("access_token");
         init();
 
     });

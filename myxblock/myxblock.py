@@ -78,12 +78,6 @@ class MyXBlock(XBlock):
         return frag
 
     @XBlock.json_handler
-    def get_init(self, data, suffix=''):
-
-        returndata = self.get_token()
-        return {"returndata":returndata}
-
-    @XBlock.json_handler
     def list_files(self,data,suffix=''):
         return({"listfiles":"10000"})
 
@@ -102,7 +96,12 @@ class MyXBlock(XBlock):
 
         return {"count": self.count}
 
-    def get_token(self):
+    @XBlock.json_handler
+    def get_token(self, data, suffix=''):
+        returndata = self.get_access_token()
+        return {"returndata": returndata}
+
+    def get_access_token(self):
 
         url = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13'
         headers = {'Content-Type ': 'application/x-www-form-urlencoded',
