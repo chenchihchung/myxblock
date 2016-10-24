@@ -6,7 +6,7 @@ function MyXBlock(runtime, element) {
     function listFiles(result) {
         access_token = result.returndata;
         console.log('access_log -->'+access_token);
-        get_root_uri(access_token);
+        //get_root_uri(access_token);
         //$('#access_token').text(result.returndata);
         $('#access_token', element).text(result.returndata);
 
@@ -45,13 +45,13 @@ function MyXBlock(runtime, element) {
     }
 
     function author_init() {
-        //var url = runtime.handlerUrl(element, 'get_token');
-        //$.ajax({
-        //    type: "POST",
-        //    url: url,
-        //    data: JSON.stringify({"hello": "world"}),
-        //    success: listFiles
-        //});
+        var url = runtime.handlerUrl(element, 'get_token');
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: JSON.stringify({"hello": "world"}),
+            success: listFiles
+        });
     }
 
     function getAccessToken(result) {
@@ -91,7 +91,7 @@ function MyXBlock(runtime, element) {
     $(function ($) {
         /* Here's where you'd do things on page load. */
         console.log('This is myxblock_author.js');
-        //author_init();
-        getToken();
+        author_init();
+        //getToken();
     });
 }
