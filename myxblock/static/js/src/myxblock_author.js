@@ -56,7 +56,7 @@ function MyXBlock(runtime, element) {
 
     function getAccessToken(result) {
         console.log(" getAccessToken -->"+result);
-        access_token = result.returndata;
+        //access_token = result.returndata;
         //console.log('access_log -->'+access_token);
         //get_root_uri(access_token);
         //$('#access_token').text(result.returndata);
@@ -82,7 +82,7 @@ function MyXBlock(runtime, element) {
             url: url,
             headers : headers,
             data : data,
-            success : getAccessToken()
+            success : getAccessToken
         });
     }
 
