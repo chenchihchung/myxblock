@@ -12,13 +12,20 @@ function MyXBlock(runtime, element) {
 
     function getAuthAccessToken() {
         //var encAcctKey = encodeURIComponent(accountKey);
+        var baseACSUrl = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13';
         var accountName = "drcedx";
         var encAcctKey  = "oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s=";
-
+        var headers = {'Content-Type ': 'application/x-www-form-urlencoded',
+                   'Host': 'wamsprodglobal001acs.accesscontrol.windows.net',
+                   'Content-Length': '120',
+                   'Expect': '100-continue',
+                   'Connection': 'Keep-Alive',
+                   'Accept': 'application/json'};
         $.support.cors = true; // force cross-site scripting (as of jQuery 1.5)
         $.ajax({
             crossDomain: true,
-            url: this.baseACSUrl,
+            url: baseACSUrl,
+            header: headers,
             type: "POST",
             data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope=urn%3aWindowsAzureMediaServices",
             success: function (data) {
