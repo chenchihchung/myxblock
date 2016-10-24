@@ -116,13 +116,15 @@ function MyXBlock(runtime, element) {
                        'Connection': 'Keep-Alive',
                        'Accept': 'application/json'};
         $.support.cors = true; // force cross-site scripting (as of jQuery 1.5)
-        $.ajax({
+        $.getJSON({
+        //$.ajax({
             crossDomain: true,
             url: baseACSUrl,
             header: headers,
             type: "POST",
             data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope=urn%3aWindowsAzureMediaServices",
             success: function (data) {
+                 console.log(" into success() ");
                 if (success != undefined && success != null) {
                     console.log(' data -->'+data);
                 }else {
@@ -130,6 +132,7 @@ function MyXBlock(runtime, element) {
                 }
             },
             error: function (req, type, ex) {
+                console.log(" into error() ");
                 if (error != undefined && error != null) {
                     console.log(' ex -->'+ex);
                 }
