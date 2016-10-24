@@ -2,6 +2,47 @@
 function MyXBlock(runtime, element) {
 
 
+    /*******************************************************************
+     * Utility Methods & Global Variables
+     *******************************************************************/
+    //jsonMediaServicesCtx: { accessToken:"",expiresIn:"" }
+    baseWAMSUrl = 'https://wamsbluclus001rest-hs.cloudapp.net/API/';
+    baseACSUrl = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13';
+
+
+    function getAuthAccessToken() {
+        //var encAcctKey = encodeURIComponent(accountKey);
+        var accountName = "drcedx";
+        var encAcctKey  = "oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s=";
+
+        $.support.cors = true; // force cross-site scripting (as of jQuery 1.5)
+        $.ajax({
+            crossDomain: true,
+            url: this.baseACSUrl,
+            type: "POST",
+            data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope=urn%3aWindowsAzureMediaServices",
+            success: function (data) {
+                if (success != undefined && success != null) {
+                    console.log(' data -->'+data);
+                }else {
+                    console.log(' return data is error');
+                }
+            },
+            error: function (req, type, ex) {
+                if (error != undefined && error != null) {
+                    error(req, type, ex);
+                }
+                else {
+                    throw ex;
+                }
+            }
+        });
+    }
+
+
+
+
+
 
     function listFiles(result) {
         access_token = result.returndata;
@@ -94,6 +135,7 @@ function MyXBlock(runtime, element) {
         /* Here's where you'd do things on page load. */
         console.log('This is myxblock_author.js');
         //author_init();
-        getToken();
+        //getToken();
+        getAuthAccessToken();
     });
 }
