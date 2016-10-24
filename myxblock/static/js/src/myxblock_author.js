@@ -71,7 +71,8 @@ function MyXBlock(runtime, element) {
                    'Content-Length': '120',
                    'Expect': '100-continue',
                    'Connection': 'Keep-Alive',
-                   'Accept': 'application/json'};
+                   'Accept': 'application/json',
+                   'Access-Control-Allow-Origin':'*'};
         data = {
                 'grant_type': 'client_credentials',
                 'client_id': 'drcedx',
