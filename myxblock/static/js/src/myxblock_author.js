@@ -37,8 +37,8 @@ function MyXBlock(runtime, element) {
             headers : {
                'Authorization': 'Bearer ' + token,
                'x-ms-version': '2.11',
-               'Accept': 'application/json'
-               //'Access-Control-Allow-Origin':'*'
+               'Accept': 'application/json',
+               'Access-Control-Allow-Origin':'*'
             },
             success : get_root_uri_data
         });
