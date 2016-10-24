@@ -116,8 +116,8 @@ function MyXBlock(runtime, element) {
                        'Connection': 'Keep-Alive',
                        'Accept': 'application/json'};
         //$.support.cors = true; // force cross-site scripting (as of jQuery 1.5)
-        $.getJSON({
-        //$.ajax({
+        //$.getJSON({
+        $.ajax({
             //crossDomain: true,
             url: baseACSUrl,
             header: headers,
