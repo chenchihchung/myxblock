@@ -65,21 +65,23 @@ function MyXBlock(runtime, element) {
     }
 
     function getToken() {
+
         var url = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13';
         headers = {'Content-Type ': 'application/x-www-form-urlencoded',
                    'Host': 'wamsprodglobal001acs.accesscontrol.windows.net',
                    'Content-Length': '120',
                    'Expect': '100-continue',
                    'Connection': 'Keep-Alive',
-                   'Accept': 'application/json',
-                   'Access-Control-Allow-Origin':'*',
-                   'Access-Control-Allow-Headers': '*'};
-        data = {
-                'grant_type': 'client_credentials',
-                'client_id': 'drcedx',
-                'scope': 'urn:WindowsAzureMediaServices',
-                'client_secret': 'oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s='};
+                   'Accept': 'application/json'};
+        data ="grant_type=client_credentials&client_id=drcedx&scope=urn:WindowsAzureMediaServices&client_secret=oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s=";
+        //data = {
+        //        'grant_type': 'client_credentials',
+        //        'client_id': 'drcedx',
+        //        'scope': 'urn:WindowsAzureMediaServices',
+        //        'client_secret': 'oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s='};
+        $.support.cors = true;
         $.ajax({
+            crossDomain:true,
             type: "POST",
             url: url,
             headers : headers,
@@ -91,7 +93,7 @@ function MyXBlock(runtime, element) {
     $(function ($) {
         /* Here's where you'd do things on page load. */
         console.log('This is myxblock_author.js');
-        author_init();
-        //getToken();
+        //author_init();
+        getToken();
     });
 }
