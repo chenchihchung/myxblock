@@ -35,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/myxblock/myxblock.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="282">
-              <caret line="111" column="48" selection-start-line="106" selection-start-column="8" selection-end-line="111" selection-end-column="48" />
+              <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
               <folding>
                 <element signature="e#57#68#0" expanded="true" />
               </folding>
@@ -46,8 +46,8 @@
       <file leaf-file-name="myxblock_author.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myxblock/static/js/src/myxblock_author.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" column="93" selection-start-line="14" selection-start-column="93" selection-end-line="14" selection-end-column="93" />
+            <state relative-caret-position="526">
+              <caret line="136" column="41" selection-start-line="136" selection-start-column="41" selection-end-line="136" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -930,7 +930,7 @@
     <entry file="file://$PROJECT_DIR$/myxblock/myxblock.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
-          <caret line="111" column="48" selection-start-line="106" selection-start-column="8" selection-end-line="111" selection-end-column="48" />
+          <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
           <folding>
             <element signature="e#57#68#0" expanded="true" />
           </folding>
@@ -939,8 +939,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myxblock/static/js/src/myxblock_author.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="93" selection-start-line="14" selection-start-column="93" selection-end-line="14" selection-end-column="93" />
+        <state relative-caret-position="526">
+          <caret line="136" column="41" selection-start-line="136" selection-start-column="41" selection-end-line="136" selection-end-column="41" />
           <folding />
         </state>
       </provider>
