@@ -128,9 +128,9 @@ function MyXBlock(runtime, element) {
     function getAuthAccessToken() {
         var url = runtime.handlerUrl(element, 'get_token');
         $.ajax({
-            url    :url,
-            type   :'POST',
-            data: JSON.stringify({"hello": "world"}),
+            url    : url,
+            type   : 'POST',
+            data   : JSON.stringify({"hello": "world"}),
             sucess : function (result) {
                 console.log(" getAuthAccessToken sucess ...");
                 //console.log(" token -- >"+result.access_token+",expired_in -->"+result.expires_in);
