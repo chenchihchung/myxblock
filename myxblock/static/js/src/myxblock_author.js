@@ -111,12 +111,18 @@ function MyXBlock(runtime, element) {
         var encAcctKey  = encodeURIComponent("oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s=");
         var scope       = encodeURIComponent("urn:WindowsAzureMediaServices");
 
+        var fr = new FormData();
+        fr.append('grant_type','client_credentials');
+        fr.append('client_id',accountName);
+        fr.append('client_secret',encAcctKey);
+        fr.append('scope',scope);
 
         $.ajax({
             url: baseACSUrl,
             contentType: "application/x-www-form-urlencoded",
             type: "POST",
-            data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope="+scope,
+            //data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope="+scope,
+            data : data,
             success: function (data) {
                 console.log(" into success() ");
 
