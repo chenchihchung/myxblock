@@ -9,13 +9,17 @@ function MyXBlock(runtime, element) {
     //baseWAMSUrl = 'https://wamsbluclus001rest-hs.cloudapp.net/API/';
     //baseACSUrl = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13';
 
+    $(function ($) {
+        /* Here's where you'd do things on page load. */
+        console.log('This is myxblock_author.js');
+        //author_init();
+        //getToken();
+        getAuthAccessToken();
+        $('#listfile').click(
+           get_root_uri()
+        );
 
-
-
-
-
-
-
+    });
 
     function listFiles(result) {
         access_token = result.returndata;
@@ -26,35 +30,28 @@ function MyXBlock(runtime, element) {
 
     }
 
-    /*def get_root_uri(self, token):
-        r = requests.get(
-            'https://media.windows.net/',
-            headers = {
-                'Authorization': 'Bearer ' + token,
-                'x-ms-version': '2.11',
-                'Accept': 'application/json'
-            },
-            proxies = self.proxies
-        )
-        return json.loads(r.text)['odata.metadata'].strip('$metadata')
-    */
-
     function get_root_uri_data(result) {
         console.log("get_root_uri_data result.text -->"+result.text);
     }
 
-    function get_root_uri(token) {
-        url = 'https://media.windows.net/';
-         $.ajax({
+    function get_root_uri() {
+        var url = 'https://media.windows.net/';
+        var token = getAuthAccessToken();
+        console.log('get_root_uri -->'+token);
+        $.ajax({
             type: "POST",
             url: url,
             headers : {
                'Authorization': 'Bearer ' + token,
                'x-ms-version': '2.11',
-               'Accept': 'application/json',
-               'Access-Control-Allow-Origin':'*'
+               'Accept': 'application/json'
             },
-            success : get_root_uri_data
+            success : function (data) {
+                console.log('success.....');
+            },
+            error :function (req,type,ex) {
+                console.log("error");
+            }
         });
     }
 
@@ -68,72 +65,11 @@ function MyXBlock(runtime, element) {
         });
     }
 
-    function getAccessToken(result) {
-        console.log(" getAccessToken -->"+result);
-        //access_token = result.returndata;
-        //console.log('access_log -->'+access_token);
-        //get_root_uri(access_token);
-        //$('#access_token').text(result.returndata);
-        //$('#access_token', element).text(result.returndata);
-
-    }
-
-    function getToken() {
-
-        var url = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13';
-        headers = {'Content-Type ': 'application/x-www-form-urlencoded',
-                   'Host': 'wamsprodglobal001acs.accesscontrol.windows.net',
-                   'Content-Length': '120',
-                   'Expect': '100-continue',
-                   'Connection': 'Keep-Alive',
-                   'Accept': 'application/json'};
-        data ="grant_type=client_credentials&client_id=drcedx&scope=urn:WindowsAzureMediaServices&client_secret=oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s=";
-        //data = {
-        //        'grant_type': 'client_credentials',
-        //        'client_id': 'drcedx',
-        //        'scope': 'urn:WindowsAzureMediaServices',
-        //        'client_secret': 'oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s='};
-        $.support.cors = true;
-        $.ajax({
-            crossDomain:true,
-            type: "POST",
-            url: url,
-            headers : headers,
-            data : data,
-            success : getAccessToken
-        });
-    }
-
-    // function getAuthAccessToken() {
-    //     var baseACSUrl = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13';
-    //     var accountName = "drcedx";
-    //     var encAcctKey  = encodeURIComponent("oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s=");
-    //     var scope       = encodeURIComponent("urn:WindowsAzureMediaServices");
-    //
-    //     $.ajax({
-    //         url: baseACSUrl,
-    //         method:"POST",
-    //         data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope="+scope,
-    //         success: function (data) {
-    //             console.log(" into success() ");
-    //
-    //         },
-    //         error: function (req, type, ex) {
-    //             console.log(" into error() ");
-    //
-    //         }
-    //     });
-    // }
-
     function expireToken(seconds) {
         var date = new Date();
         var s = seconds;
         date.setTime(date.getTime() + ( s * 1000));
         $.cookie("cookie", "access_token", { expires: date });
-    }
-
-    function getTokenData() {
-
     }
 
     function getAuthAccessToken() {
@@ -146,14 +82,9 @@ function MyXBlock(runtime, element) {
                 type   : 'POST',
                 data   : JSON.stringify({"hello": "world"}),
                 success : function (data) {
-                    //var dataObj =$.parseJSON(result);
-                    console.log(" getAuthAccessToken sucess ...");
-                    //alert(' token -- >'+dataObj.access_token);
-                    //console.log('token -- >'+dataObj.access_token+',expired_in -->'+dataObj.expires_in);
-                    console.log('token -- >'+data.access_token);
-                    console.log('expires -->'+data.expires_in);
                     $.cookie('access_token', data.access_token);
                     expireToken(data.expires_in);
+                    return (data.access_token);
                 },
                 error :function (req,type,ex) {
                     console.log("error");
@@ -163,16 +94,7 @@ function MyXBlock(runtime, element) {
             //nothing
             console.log(" else ");
         }
-
-
-
     }
 
-    $(function ($) {
-        /* Here's where you'd do things on page load. */
-        console.log('This is myxblock_author.js');
-        //author_init();
-        //getToken();
-        getAuthAccessToken();
-    });
+
 }
