@@ -102,18 +102,9 @@ class MyXBlock(XBlock):
         return {"returndata": returndata}
 
     def get_access_token(self):
-
         url = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13'
-        headers = {'Content-Type ': 'application/x-www-form-urlencoded',
-                   'Host': 'wamsprodglobal001acs.accesscontrol.windows.net',
-                   'Content-Length': '120',
-                   'Expect': '100-continue',
-                   'Connection': 'Keep-Alive',
-                   'Accept': 'application/json'}
-
         r = requests.post(
             url,
-            headers = headers,
             data = {
                 'grant_type': 'client_credentials',
                 'client_id': 'drcedx',

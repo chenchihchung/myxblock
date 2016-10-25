@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="433b2aed-da12-44a6-856c-10caa93a5961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myxblock/static/html/myxblock_author.html" afterPath="$PROJECT_DIR$/myxblock/static/html/myxblock_author.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myxblock/myxblock.py" afterPath="$PROJECT_DIR$/myxblock/myxblock.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myxblock/static/js/src/myxblock_author.js" afterPath="$PROJECT_DIR$/myxblock/static/js/src/myxblock_author.js" />
     </list>
     <ignored path="myxblock.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,8 +36,8 @@
       <file leaf-file-name="myxblock.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myxblock/myxblock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="120" column="22" selection-start-line="116" selection-start-column="19" selection-end-line="120" selection-end-column="22" />
+            <state relative-caret-position="198">
+              <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
               <folding>
                 <element signature="e#57#68#0" expanded="true" />
               </folding>
@@ -43,21 +45,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myxblock_author.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="myxblock_author.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myxblock/static/js/src/myxblock_author.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="132" column="14" selection-start-line="132" selection-start-column="14" selection-end-line="132" selection-end-column="14" />
+            <state relative-caret-position="224">
+              <caret line="112" column="8" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myxblock_author.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="myxblock_author.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock_author.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            <state relative-caret-position="0">
+              <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -76,7 +78,7 @@
       <file leaf-file-name="myxblock.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myxblock/static/js/src/myxblock.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="666">
               <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -106,10 +108,10 @@
         <option value="$PROJECT_DIR$/myxblock/static/html/myxblock_edit.html" />
         <option value="$PROJECT_DIR$/myxblock/static/html/myxblock_studio.html" />
         <option value="$PROJECT_DIR$/myxblock/static/html/myxblock.html" />
-        <option value="$PROJECT_DIR$/myxblock/myxblock.py" />
         <option value="$PROJECT_DIR$/myxblock/static/js/src/myxblock.js" />
-        <option value="$PROJECT_DIR$/myxblock/static/js/src/myxblock_author.js" />
         <option value="$PROJECT_DIR$/myxblock/static/html/myxblock_author.html" />
+        <option value="$PROJECT_DIR$/myxblock/myxblock.py" />
+        <option value="$PROJECT_DIR$/myxblock/static/js/src/myxblock_author.js" />
       </list>
     </option>
   </component>
@@ -150,7 +152,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -251,7 +253,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -596,6 +598,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myxblock/static/js/src/myxblock_author.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2376">
+          <caret line="132" column="14" selection-start-line="132" selection-start-column="14" selection-end-line="132" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock_author.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myxblock/static/js/src/myxblock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myxblock/myxblock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#57#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myxblock/static/js/src/myxblock_author.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
           <folding />
@@ -911,7 +957,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myxblock/static/js/src/myxblock.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="666">
           <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -919,10 +965,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock_author.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/myxblock/myxblock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="120" column="22" selection-start-line="116" selection-start-column="19" selection-end-line="120" selection-end-column="22" />
+        <state relative-caret-position="198">
+          <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
           <folding>
             <element signature="e#57#68#0" expanded="true" />
           </folding>
@@ -931,16 +985,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myxblock/static/js/src/myxblock_author.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="132" column="14" selection-start-line="132" selection-start-column="14" selection-end-line="132" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myxblock/static/html/myxblock_author.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state relative-caret-position="224">
+          <caret line="112" column="8" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="8" />
           <folding />
         </state>
       </provider>

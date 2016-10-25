@@ -109,12 +109,8 @@ function MyXBlock(runtime, element) {
         var baseACSUrl = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13';
         var accountName = "drcedx";
         var encAcctKey  = encodeURIComponent("oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s=");
-        var headers = {'Content-Type ': 'application/x-www-form-urlencoded',
-                       'Host': 'wamsprodglobal001acs.accesscontrol.windows.net',
-                       'Content-Length': '120',
-                       'Expect': '100-continue',
-                       'Connection': 'Keep-Alive',
-                       'Accept': 'application/json'};
+
+        
         $.support.cors = true; // force cross-site scripting (as of jQuery 1.5)
         //$.getJSON({
         $.ajax({
