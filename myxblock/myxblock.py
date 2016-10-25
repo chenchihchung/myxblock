@@ -98,10 +98,10 @@ class MyXBlock(XBlock):
 
     @XBlock.json_handler
     def get_token(self, data, suffix=''):
-        returndata = self.get_access_token()
+        #returndata = self.get_access_token()
         #jsonObject = json.loads(returndata)
         #return {"returndata": jsonObject['access_token'], "expires_in":jsonObject['expires_in']}
-        return {"access_token": returndata}
+        return {"access_token": "returndata"}
 
     def get_access_token(self):
         url = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13'
