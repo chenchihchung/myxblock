@@ -29,8 +29,7 @@ function MyXBlock(runtime, element) {
     function get_root_uri() {
         var url = 'https://media.windows.net/';
         var token = getAuthAccessToken();
-        /*
-        console.log('get_root_uri -->'+token);
+        console.log('get_root_uri gettoken()-->'+token);
         $.ajax({
             type: "POST",
             url: url,
@@ -46,7 +45,7 @@ function MyXBlock(runtime, element) {
                 console.log("error");
             }
         });
-        */
+
     }
 
     function author_init() {
