@@ -99,9 +99,9 @@ class MyXBlock(XBlock):
     @XBlock.json_handler
     def get_token(self, data, suffix=''):
         returndata = self.get_access_token()
-        #jsonObject = json.loads(returndata)
-        #return {"returndata": jsonObject['access_token'], "expires_in":jsonObject['expires_in']}
-        return {"access_token": returndata}
+        jsonObject = json.loads(returndata)
+        return {"returndata": jsonObject['access_token'], "expires_in":jsonObject['expires_in']}
+        #return {"access_token": returndata}
 
     def get_access_token(self):
         url = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13'
@@ -115,14 +115,8 @@ class MyXBlock(XBlock):
             },
             proxies = self.proxies
         )
-        #return ({
-        #    "token_type":"http://schemas.xmlsoap.org/ws/2009/11/swt-token-profile-1.0",
-        #    "access_token":"http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421330840&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=uf69n82KlqZmkJDNxhJkOxpyIpA2HDyeGUTtSnq1vlE%3d",
-        #    "expires_in":"21600",
-        #    "scope":"urn:WindowsAzureMediaServices"
-        #})
-        #return (r.text)
-        return json.loads(r.text)['access_token']
+        return (r.text)
+        #return json.loads(r.text)['access_token']
         #jsonObject = json.loads(r.text)
         #return jsonObject['access_token']
 
