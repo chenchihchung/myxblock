@@ -119,8 +119,8 @@ function MyXBlock(runtime, element) {
 
         $.ajax({
             url: baseACSUrl,
-            contentType: "application/x-www-form-urlencoded",
             type: "POST",
+            processData: false,
             //data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope="+scope,
             data : fr,
             success: function (data) {
