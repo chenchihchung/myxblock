@@ -152,8 +152,8 @@ function MyXBlock(runtime, element) {
                     //console.log('token -- >'+dataObj.access_token+',expired_in -->'+dataObj.expires_in);
                     console.log('token -- >'+data.access_token);
                     console.log('expires -->'+data.expires_in);
-                    $.cookie('access_token', dataObj.access_token);
-                    expireToken(result.expires_in);
+                    $.cookie('access_token', data.access_token);
+                    expireToken(data.expires_in);
                 },
                 error :function (req,type,ex) {
                     console.log("error");
