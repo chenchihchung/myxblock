@@ -100,8 +100,8 @@ class MyXBlock(XBlock):
     def get_token(self, data, suffix=''):
         returndata = self.get_access_token()
         jsonObject = json.loads(returndata)
-        return {"access_token": jsonObject['access_token']};
-        #return {"access_token": jsonObject['access_token'], "expires_in":jsonObject['expires_in']}
+        #return {"access_token": jsonObject['access_token']};
+        return {"access_token": jsonObject['access_token'], "expires_in":jsonObject['expires_in']}
         #return {"access_token": returndata}
 
     def get_access_token(self):
