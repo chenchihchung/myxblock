@@ -105,37 +105,26 @@ function MyXBlock(runtime, element) {
     }
 
     function getAuthAccessToken() {
-        //var encAcctKey = encodeURIComponent(accountKey);
+
         var baseACSUrl = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13';
         var accountName = "drcedx";
         var encAcctKey  = encodeURIComponent("oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s=");
+        var scope       = encodeURIComponent("urn:WindowsAzureMediaServices");
 
-        
         $.support.cors = true; // force cross-site scripting (as of jQuery 1.5)
         //$.getJSON({
         $.ajax({
             crossDomain: true,
             url: baseACSUrl,
-            header: headers,
             type: "POST",
-            data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope=urn%3aWindowsAzureMediaServices",
+            data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope="+scope,
             success: function (data) {
-                 console.log(" into success() ");
-                if (success != undefined && success != null) {
-                    console.log(' data -->'+data);
-                }else {
-                    console.log(' return data is error');
-                }
+                console.log(" into success() ");
+
             },
             error: function (req, type, ex) {
                 console.log(" into error() ");
-                if (error != undefined && error != null) {
-                    console.log(' ex -->'+ex);
-                }
-                else {
-                    console.log("error");
-                    throw ex;
-                }
+
             }
         });
     }

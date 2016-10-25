@@ -56,9 +56,9 @@ function MyXBlock(runtime, element) {
         /* Here's where you'd do things on page load. */
         alert('This is myxblock.js')
         //$(".xblock-display-name").html("xblock title");
-        $("#access_token").html("access_token");
-        $(".access_token_text").text("access_token");
-        init();
+        //$("#access_token").html("access_token");
+        //$(".access_token_text").text("access_token");
+        //init();
 
     });
 }
