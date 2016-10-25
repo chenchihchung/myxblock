@@ -142,11 +142,12 @@ function MyXBlock(runtime, element) {
                 type   : 'POST',
                 data   : JSON.stringify({"hello": "world"}),
                 sucess : function (result) {
-                    var data =$.parseJSON(result);
+                    var dataObj =$.parseJSON(result);
                     console.log(" getAuthAccessToken sucess ...");
-                    console.log(" token -- >"+data.access_token+",expired_in -->"+data.expires_in);
-                    console.log(" token -- >"+data.access_token);
-                    $.cookie('access_token', data.access_token);
+                    alert(' token -- >'+dataObj.access_token);
+                    console.log('token -- >'+dataObj.access_token+',expired_in -->'+dataObj.expires_in);
+                    console.log('token -- >'+dataObj.access_token);
+                    $.cookie('access_token', dataObj.access_token);
                     expireToken(result.expires_in);
                 },
                 error :function (req,type,ex) {
