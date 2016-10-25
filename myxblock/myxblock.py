@@ -99,7 +99,8 @@ class MyXBlock(XBlock):
     @XBlock.json_handler
     def get_token(self, data, suffix=''):
         returndata = self.get_access_token()
-        return {"returndata": returndata}
+        jsonObject = json.loads(returndata)
+        return {"returndata": jsonObject['access_token'], "expires_in":jsonObject['expires_in']}
 
     def get_access_token(self):
         url = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13'
@@ -113,9 +114,10 @@ class MyXBlock(XBlock):
             },
             proxies = self.proxies
         )
+        return (r.text)
         #return json.loads(r.text)['access_token']
-        jsonObject = json.loads(r.text)
-        return jsonObject['access_token']
+        #jsonObject = json.loads(r.text)
+        #return jsonObject['access_token']
 
     #@XBlock.json_handler
     #def get_init_token(self, data , suffix=''):

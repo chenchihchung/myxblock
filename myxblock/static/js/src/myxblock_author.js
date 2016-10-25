@@ -104,31 +104,38 @@ function MyXBlock(runtime, element) {
         });
     }
 
+    // function getAuthAccessToken() {
+    //     var baseACSUrl = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13';
+    //     var accountName = "drcedx";
+    //     var encAcctKey  = encodeURIComponent("oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s=");
+    //     var scope       = encodeURIComponent("urn:WindowsAzureMediaServices");
+    //
+    //     $.ajax({
+    //         url: baseACSUrl,
+    //         method:"POST",
+    //         data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope="+scope,
+    //         success: function (data) {
+    //             console.log(" into success() ");
+    //
+    //         },
+    //         error: function (req, type, ex) {
+    //             console.log(" into error() ");
+    //
+    //         }
+    //     });
+    // }
+
     function getAuthAccessToken() {
-
-        var baseACSUrl = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13';
-        var accountName = "drcedx";
-        var encAcctKey  = encodeURIComponent("oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s=");
-        var scope       = encodeURIComponent("urn:WindowsAzureMediaServices");
-
-        var fr = new FormData();
-        fr.append('grant_type','client_credentials');
-        fr.append('client_id',accountName);
-        fr.append('client_secret',encAcctKey);
-        fr.append('scope',scope);
-
+        var url = runtime.handlerUrl(element, 'get_token');
         $.ajax({
-            url: baseACSUrl,
-            type: "POST",
-            processData: false,
-            //data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope="+scope,
-            data : fr,
-            success: function (data) {
-                console.log(" into success() ");
-
+            url   :url,
+            method:'POST',
+            sucess : function (result) {
+                console.log(" getAuthAccessToken sucess ...");
+                console.log(" token -- >"+result.access_token+",expired_in -->"+result.expires_in);
+                console.log(" ")
             },
-            error: function (req, type, ex) {
-                console.log(" into error() ");
+            error :function (req,type,ex) {
 
             }
         });
