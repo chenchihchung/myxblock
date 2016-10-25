@@ -135,6 +135,7 @@ function MyXBlock(runtime, element) {
     function getAuthAccessToken() {
         console.log("$.cookie('access_token')-->"+$.cookie('access_token'));
         if ($.cookie('access_token')== null) {
+            console.log(" py --> get_token()");
             var url = runtime.handlerUrl(element, 'get_token');
             $.ajax({
                 url    : url,
@@ -153,6 +154,7 @@ function MyXBlock(runtime, element) {
             });
         }else {
             //nothing
+            console.log(" else ");
         }
 
 
