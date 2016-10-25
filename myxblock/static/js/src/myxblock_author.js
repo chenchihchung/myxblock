@@ -132,11 +132,11 @@ function MyXBlock(runtime, element) {
             type   :'POST',
             sucess : function (result) {
                 console.log(" getAuthAccessToken sucess ...");
-                console.log(" token -- >"+result.access_token+",expired_in -->"+result.expires_in);
-                console.log(" ")
+                //console.log(" token -- >"+result.access_token+",expired_in -->"+result.expires_in);
+                console.log(" token -- >"+result.access_token);
             },
             error :function (req,type,ex) {
-
+                console.log("error");
             }
         });
     }
