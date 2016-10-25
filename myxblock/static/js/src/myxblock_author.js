@@ -9,15 +9,16 @@ function MyXBlock(runtime, element) {
     //baseWAMSUrl = 'https://wamsbluclus001rest-hs.cloudapp.net/API/';
     //baseACSUrl = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13';
 
+
     $(function ($) {
         /* Here's where you'd do things on page load. */
         console.log('This is myxblock_author.js');
         //author_init();
         //getToken();
         getAuthAccessToken();
-        $('#listfile').click(
-           get_root_uri()
-        );
+        $('#listfile').click(function() {
+            get_root_uri();
+        });
 
     });
 
