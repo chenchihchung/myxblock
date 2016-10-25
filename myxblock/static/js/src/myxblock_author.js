@@ -32,12 +32,13 @@ function MyXBlock(runtime, element) {
         console.log('get_root_uri gettoken()-->'+token);
         $.ajax({
             type: "POST",
-            url: url,
+            url : url,
             headers : {
                'Authorization': 'Bearer ' + token,
                'x-ms-version': '2.11',
                'Accept': 'application/json'
             },
+            data   : JSON.stringify({"hello": "world"}),
             success : function (data) {
                 console.log('success.....');
             },
