@@ -133,6 +133,7 @@ function MyXBlock(runtime, element) {
     }
 
     function getAuthAccessToken() {
+        console.log("$.cookie('access_token')-->"+$.cookie('access_token'));
         if ($.cookie('access_token')=='undefined') {
             var url = runtime.handlerUrl(element, 'get_token');
             $.ajax({
