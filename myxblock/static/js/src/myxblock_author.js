@@ -145,7 +145,7 @@ function MyXBlock(runtime, element) {
                 url    : url,
                 type   : 'POST',
                 data   : JSON.stringify({"hello": "world"}),
-                sucess : function (data) {
+                success : function (data) {
                     //var dataObj =$.parseJSON(result);
                     console.log(" getAuthAccessToken sucess ...");
                     //alert(' token -- >'+dataObj.access_token);
