@@ -86,6 +86,7 @@ function MyXBlock(runtime, element) {
         }else {
             //nothing
             console.log(" else ");
+            return ($.cookie('access_token'));
         }
     }
 
