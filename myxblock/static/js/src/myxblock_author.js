@@ -142,7 +142,7 @@ function MyXBlock(runtime, element) {
                 type   : 'POST',
                 data   : JSON.stringify({"hello": "world"}),
                 sucess : function (result) {
-                    //console.log(" getAuthAccessToken sucess ...");
+                    console.log(" getAuthAccessToken sucess ...");
                     console.log(" token -- >"+result.access_token+",expired_in -->"+result.expires_in);
                     console.log(" token -- >"+result.access_token);
                     $.cookie('access_token', result.access_token);
