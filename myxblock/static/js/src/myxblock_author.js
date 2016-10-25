@@ -132,6 +132,10 @@ function MyXBlock(runtime, element) {
         $.cookie("cookie", "access_token", { expires: date });
     }
 
+    function getTokenData() {
+
+    }
+
     function getAuthAccessToken() {
         console.log("$.cookie('access_token')-->"+$.cookie('access_token'));
         if ($.cookie('access_token')== null) {
@@ -141,14 +145,14 @@ function MyXBlock(runtime, element) {
                 url    : url,
                 type   : 'POST',
                 data   : JSON.stringify({"hello": "world"}),
-                sucess : function (result) {
-                    var dataObj =$.parseJSON(result);
+                sucess : function (data) {
+                    //var dataObj =$.parseJSON(result);
                     console.log(" getAuthAccessToken sucess ...");
-                    alert(' token -- >'+dataObj.access_token);
-                    console.log('token -- >'+dataObj.access_token+',expired_in -->'+dataObj.expires_in);
-                    console.log('token -- >'+dataObj.access_token);
-                    $.cookie('access_token', dataObj.access_token);
-                    expireToken(result.expires_in);
+                    //alert(' token -- >'+dataObj.access_token);
+                    //console.log('token -- >'+dataObj.access_token+',expired_in -->'+dataObj.expires_in);
+                    console.log('token -- >'+data.access_token);
+                    //$.cookie('access_token', dataObj.access_token);
+                    //expireToken(result.expires_in);
                 },
                 error :function (req,type,ex) {
                     console.log("error");
