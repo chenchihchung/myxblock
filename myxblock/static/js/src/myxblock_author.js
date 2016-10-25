@@ -21,15 +21,6 @@ function MyXBlock(runtime, element) {
 
     });
 
-    function listFiles(result) {
-        access_token = result.returndata;
-        console.log('access_log -->'+access_token);
-        //get_root_uri(access_token);
-        //$('#access_token').text(result.returndata);
-        $('#access_token', element).text(result.returndata);
-
-    }
-
     function get_root_uri_data(result) {
         console.log("get_root_uri_data result.text -->"+result.text);
     }
@@ -37,6 +28,7 @@ function MyXBlock(runtime, element) {
     function get_root_uri() {
         var url = 'https://media.windows.net/';
         var token = getAuthAccessToken();
+        /*
         console.log('get_root_uri -->'+token);
         $.ajax({
             type: "POST",
@@ -53,6 +45,7 @@ function MyXBlock(runtime, element) {
                 console.log("error");
             }
         });
+        */
     }
 
     function author_init() {
