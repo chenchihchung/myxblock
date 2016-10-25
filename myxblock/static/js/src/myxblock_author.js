@@ -111,11 +111,10 @@ function MyXBlock(runtime, element) {
         var encAcctKey  = encodeURIComponent("oYVh8L+h8DieJ/HgEf6rNo4sohyxdGRV3SLP0oOBK5s=");
         var scope       = encodeURIComponent("urn:WindowsAzureMediaServices");
 
-        $.support.cors = true; // force cross-site scripting (as of jQuery 1.5)
-        //$.getJSON({
+
         $.ajax({
-            crossDomain: true,
             url: baseACSUrl,
+            contentType: "application/x-www-form-urlencoded",
             type: "POST",
             data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope="+scope,
             success: function (data) {
