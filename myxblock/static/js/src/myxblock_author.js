@@ -122,7 +122,7 @@ function MyXBlock(runtime, element) {
             contentType: "application/x-www-form-urlencoded",
             type: "POST",
             //data: "grant_type=client_credentials&client_id=" + accountName + "&client_secret=" + encAcctKey + "&scope="+scope,
-            data : data,
+            data : fr,
             success: function (data) {
                 console.log(" into success() ");
 
