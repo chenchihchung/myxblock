@@ -125,21 +125,37 @@ function MyXBlock(runtime, element) {
     //     });
     // }
 
+    function expireToken(seconds) {
+        var date = new Date();
+        var s = seconds;
+        date.setTime(date.getTime() + ( s * 1000));
+        $.cookie("cookie", "access_token", { expires: date });
+    }
+
     function getAuthAccessToken() {
-        var url = runtime.handlerUrl(element, 'get_token');
-        $.ajax({
-            url    : url,
-            type   : 'POST',
-            data   : JSON.stringify({"hello": "world"}),
-            sucess : function (result) {
-                //console.log(" getAuthAccessToken sucess ...");
-                console.log(" token -- >"+result.access_token+",expired_in -->"+result.expires_in);
-                console.log(" token -- >"+result.access_token);
-            },
-            error :function (req,type,ex) {
-                console.log("error");
-            }
-        });
+        if ($.cookie('access_token')=='undefined') {
+            var url = runtime.handlerUrl(element, 'get_token');
+            $.ajax({
+                url    : url,
+                type   : 'POST',
+                data   : JSON.stringify({"hello": "world"}),
+                sucess : function (result) {
+                    //console.log(" getAuthAccessToken sucess ...");
+                    console.log(" token -- >"+result.access_token+",expired_in -->"+result.expires_in);
+                    console.log(" token -- >"+result.access_token);
+                    $.cookie('access_token', result.access_token);
+                    expireToken(result.expires_in);
+                },
+                error :function (req,type,ex) {
+                    console.log("error");
+                }
+            });
+        }else {
+            //nothing
+        }
+
+
+
     }
 
     $(function ($) {
