@@ -85,7 +85,7 @@ class MyXBlock(XBlock):
         print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + '@@@@@@@ get_username step 1 @@@@@@@@')
         db = MySQLdb.connect(host="localhost", user="root", passwd="", db="edxapp")
         print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + '@@@@@@@ get_username step 10 @@@@@@@@')
-        return ({"username": "getUsername"})
+        return ({"username": "getUsername1"})
 
     @XBlock.json_handler
     def list_files(self,data,suffix=''):
