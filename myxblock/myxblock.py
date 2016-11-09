@@ -80,6 +80,11 @@ class MyXBlock(XBlock):
         return frag
 
     @XBlock.json_handler
+    def get_username(self, data, suffix=''):
+        print ('@@@@@@@ get_username step 1 @@@@@@@@')
+        return ({"username": "getUsername"})
+
+    @XBlock.json_handler
     def list_files(self,data,suffix=''):
         return({"listfiles":"10000"})
 
@@ -97,25 +102,25 @@ class MyXBlock(XBlock):
 
         self.count += 1
         self.print_log()
-        print('@@@@@@@ increment_count step 2 @@@@@@@')
-        try:
-            db = MySQLdb.connect(host="localhost", user="root", passwd="", db="edxapp")
-            sql = "SELECT username FROM auth_user"
-            cursor = db.cursor()
-            cursor.execute(sql)
-            results = cursor.fetchall()
-            col1=''
-            print('@@@@@@@ increment_count step 3 @@@@@@@')
-            for record in results:
-                col1 = record[0]
-                print ('username -->'+col1)
-
-            db.close()
-            print('@@@@@@@ increment_count step 4 @@@@@@@')
-        except MySQLdb.Error as e:
-            print "dbconnect is Error %d: %s" % (e.args[0], e.args[1])
-        print('@@@@@@@ increment_count step 5 @@@@@@@')
-        return {"count":col1}
+        # print('@@@@@@@ increment_count step 2 @@@@@@@')
+        # try:
+        #     db = MySQLdb.connect(host="localhost", user="root", passwd="", db="edxapp")
+        #     sql = "SELECT username FROM auth_user"
+        #     cursor = db.cursor()
+        #     cursor.execute(sql)
+        #     results = cursor.fetchall()
+        #     col1=''
+        #     print('@@@@@@@ increment_count step 3 @@@@@@@')
+        #     for record in results:
+        #         col1 = record[0]
+        #         print ('username -->'+col1)
+        #
+        #     db.close()
+        #     print('@@@@@@@ increment_count step 4 @@@@@@@')
+        # except MySQLdb.Error as e:
+        #     print "dbconnect is Error %d: %s" % (e.args[0], e.args[1])
+        # print('@@@@@@@ increment_count step 5 @@@@@@@')
+        return {"count":self.count}
         #return {"count": self.count,"username":col1}
 
     @XBlock.json_handler

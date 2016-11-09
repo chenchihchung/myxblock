@@ -15,15 +15,29 @@ function MyXBlock(runtime, element) {
         console.log('This is myxblock_author.js');
         //author_init();
         //getToken();
-        getAuthAccessToken();
+        //getAuthAccessToken();
         $('#listfile').click(function() {
-            get_root_uri();
+            //get_root_uri();
+            get_username();
         });
 
     });
 
     function get_root_uri_data(result) {
         console.log("get_root_uri_data result.text -->"+result.text);
+    }
+
+    function get_username() {
+        var url = runtime.handlerUrl(element, 'get_username');
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: JSON.stringify({"hello": "world"}),
+            success : function (data) {
+                console.log('get_username is success....')
+                console.log('data -->'+data)
+            }
+        })
     }
 
     function get_root_uri() {
