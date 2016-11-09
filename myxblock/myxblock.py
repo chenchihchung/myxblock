@@ -59,6 +59,7 @@ class MyXBlock(XBlock):
         return frag
 
     def studio_view(self,context=None):
+        print ('$$$$$$ studio_view() $$$$$$$$')
         html = self.resource_string("static/html/myxblock_edit.html")
         frag = Fragment(html.format(self=self))
 
@@ -90,9 +91,11 @@ class MyXBlock(XBlock):
         An example handler, which increments the data.
         """
         # Just to show data coming in...
+        print('@@@@@@@ increment_count @@@@@@@')
         assert data['hello'] == 'world'
 
         self.count += 1
+        self.print_log()
 
         return {"count": self.count}
 
@@ -103,6 +106,9 @@ class MyXBlock(XBlock):
         #return {"access_token": jsonObject['access_token']};
         return {"access_token": jsonObject['access_token'], "expires_in":jsonObject['expires_in']}
         #return {"access_token": returndata}
+
+    def print_log(self):
+        print ('$$$$$$$$$$$$ print_log $$$$$$$$')
 
     def get_access_token(self):
         url = 'https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13'
