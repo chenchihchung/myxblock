@@ -92,12 +92,12 @@ class MyXBlock(XBlock):
         An example handler, which increments the data.
         """
         # Just to show data coming in...
-        print('@@@@@@@ increment_count @@@@@@@')
+        print('@@@@@@@ increment_count step1 @@@@@@@')
         assert data['hello'] == 'world'
 
         self.count += 1
         self.print_log()
-
+        print('@@@@@@@ increment_count step 2 @@@@@@@')
         try:
             db = MySQLdb.connect(host="localhost", user="root", passwd="", db="edxapp")
             sql = "SELECT username FROM auth_user"
@@ -105,14 +105,18 @@ class MyXBlock(XBlock):
             cursor.execute(sql)
             results = cursor.fetchall()
             col1=''
+            print('@@@@@@@ increment_count step 3 @@@@@@@')
             for record in results:
                 col1 = record[0]
-                print "%s " % (col1 )
+                print ('username -->'+col1)
+
             db.close()
+            print('@@@@@@@ increment_count step 4 @@@@@@@')
         except MySQLdb.Error as e:
             print "dbconnect is Error %d: %s" % (e.args[0], e.args[1])
-
-        return {"count": self.count,"username":col1}
+        print('@@@@@@@ increment_count step 5 @@@@@@@')
+        return {"count":col1}
+        #return {"count": self.count,"username":col1}
 
     @XBlock.json_handler
     def get_token(self, data, suffix=''):
