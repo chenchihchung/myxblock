@@ -3,6 +3,7 @@ import json
 
 import pkg_resources
 import requests
+import MySQLdb
 
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer,String
@@ -97,7 +98,21 @@ class MyXBlock(XBlock):
         self.count += 1
         self.print_log()
 
-        return {"count": self.count}
+        try:
+            db = MySQLdb.connect(host="localhost", user="root", passwd="", db="edxapp")
+            sql = "SELECT username FROM auth_user"
+            cursor = db.cursor()
+            cursor.execute(sql)
+            results = cursor.fetchall()
+            col1=''
+            for record in results:
+                col1 = record[0]
+                print "%s " % (col1 )
+            db.close()
+        except MySQLdb.Error as e:
+            print "dbconnect is Error %d: %s" % (e.args[0], e.args[1])
+
+        return {"count": self.count,"username":col1}
 
     @XBlock.json_handler
     def get_token(self, data, suffix=''):
