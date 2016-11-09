@@ -84,6 +84,15 @@ class MyXBlock(XBlock):
     def get_username(self, data, suffix=''):
         print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + '@@@@@@@ get_username step 1 @@@@@@@@')
         db = MySQLdb.connect(host="localhost", user="root", passwd="", db="edxapp")
+        sql = "SELECT username FROM auth_user"
+        cursor = db.cursor()
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        for record in results:
+            col1 = record[0]
+            print ('username -->'+col1)
+
+        db.close()
         print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + '@@@@@@@ get_username step 10 @@@@@@@@')
         return ({"username": "getUsername1"})
 
