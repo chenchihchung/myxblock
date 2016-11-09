@@ -35,7 +35,7 @@ function MyXBlock(runtime, element) {
             data: JSON.stringify({"hello": "world"}),
             success : function (data) {
                 console.log('get_username is success....')
-                console.log('data -->'+data)
+                console.log('data -->'+data.username)
             }
         })
     }
