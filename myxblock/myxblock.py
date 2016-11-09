@@ -4,6 +4,7 @@ import json
 import pkg_resources
 import requests
 import MySQLdb
+import time
 
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer,String
@@ -81,7 +82,9 @@ class MyXBlock(XBlock):
 
     @XBlock.json_handler
     def get_username(self, data, suffix=''):
-        print ('@@@@@@@ get_username step 1 @@@@@@@@')
+        print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + '@@@@@@@ get_username step 1 @@@@@@@@')
+        db = MySQLdb.connect(host="localhost", user="root", passwd="", db="edxapp")
+        print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + '@@@@@@@ get_username step 10 @@@@@@@@')
         return ({"username": "getUsername"})
 
     @XBlock.json_handler
