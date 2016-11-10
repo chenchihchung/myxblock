@@ -18,6 +18,7 @@ class MyXBlock(XBlock):
         #'http': 'http://10.10.1.10:3128',
         #'https': 'http://10.10.1.10:1080',
 	#
+	# master
         'http'  : '',
         'https' : '',
     }
